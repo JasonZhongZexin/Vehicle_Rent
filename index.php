@@ -35,6 +35,7 @@
                 var seats = cars[i].getElementsByTagName("seats")[0].childNodes[0].nodeValue;
                 var price = cars[i].getElementsByTagName("price_per_day")[0].childNodes[0].nodeValue;
                 var availability = cars[i].getElementsByTagName("availability")[0].childNodes[0].nodeValue;
+                var description = cars[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
                 setTitle(i+1,title);
                 //alert(id);
                 // alert(availability);
@@ -44,6 +45,7 @@
                 setSeats(i+1,seats);
                 setPrice(i+1,price);
                 setAvailability(i+1,availability)
+                setDescription(i+1,description)
                 // dispalyItem(i+1);
             }
         }
@@ -92,6 +94,12 @@
             var id="availability"+index;
             document.getElementById(id).innerHTML = data;
         }
+
+        function setDescription(index,description){
+            var data = "<b>Description: </b>"+description;
+            var id="description"+index;
+            document.getElementById(id).innerHTML = data;
+        }
         // function dispalyItem(index){
         //     document.getElementById(id).style.display = "inline-block";
         // }
@@ -117,6 +125,9 @@
                 <p id="seats1"></p>
                 <p id="price1"></p>
                 <p id="availability1"></p>
+                <br/>
+                <br/>
+                <p id="description1"></p>
             </div>
             <div class="thumbnail2">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards2"/>
@@ -126,6 +137,9 @@
                 <p id="seats2"></p>
                 <p id="price2"></p>
                 <p id="availability2"></p>
+                <br/>
+                <br/>
+                <p id="description2"></p>
             </div>
             <div class="thumbnail3">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards3"/>
@@ -135,6 +149,9 @@
                 <p id="seats3"></p>
                 <p id="price3"></p>
                 <p id="availability3"></p>
+                <br/>
+                <br/>
+                <p id="description3"></p>
             </div>
             <div class="thumbnail4">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards4"/>
@@ -144,6 +161,9 @@
                 <p id="seats4"></p>
                 <p id="price4"></p>
                 <p id="availability4"></p>
+                <br/>
+                <br/>
+                <p id="description4"></p>
             </div>
         </div>
         <div class="gallery">
@@ -155,6 +175,9 @@
                 <p id="seats5"></p>
                 <p id="price5"></p>
                 <p id="availability5"></p>
+                <br/>
+                <br/>
+                <p id="description5"></p>
             </div>
             <div class="thumbnail6">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards6"/>
@@ -164,6 +187,9 @@
                 <p id="seats6"></p>
                 <p id="price6"></p>
                 <p id="availability6"></p>
+                <br/>
+                <br/>
+                <p id="description6"></p>
             </div>
             <div class="thumbnail7">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards7"/>
@@ -173,6 +199,9 @@
                 <p id="seats7"></p>
                 <p id="price7"></p>
                 <p id="availability7"></p>
+                <br/>
+                <br/>
+                <p id="description7"></p>
             </div>
             <div class="thumbnail8">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards8"/>
@@ -182,6 +211,9 @@
                 <p id="seats8"></p>
                 <p id="price8"></p>
                 <p id="availability8"></p>
+                <br/>
+                <br/>
+                <p id="description8"></p>
             </div>
         </div>
         <div class="gallery">
@@ -193,6 +225,9 @@
                 <p id="seats9"></p>
                 <p id="price9"></p>
                 <p id="availability9"></p>
+                <br/>
+                <br/>
+                <p id="description9"></p>
             </div>
             <div class="thumbnail10">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards10"/>
@@ -202,6 +237,9 @@
                 <p id="seats10"></p>
                 <p id="price10"></p>
                 <p id="availability10"></p>
+                <br/>
+                <br/>
+                <p id="description10"></p>
             </div>
             <!-- <div class="thumbnail11">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards11"/>
