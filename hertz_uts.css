@@ -114,14 +114,14 @@ header {
     width: 80%; 
     font-size: 0.9em;
 }
-.gallery_container{
+/* .gallery_container{
     width: 100%;
     height: 3000px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     background: #52BAD5;
-}
+} */
 /* .gallery .thumbnail1 .tag {
 	color: #5D5E5D;
 	padding-bottom: 4px;
