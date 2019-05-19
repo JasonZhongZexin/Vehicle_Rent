@@ -32,11 +32,18 @@
                 var model = cars[i].getElementsByTagName("model")[0].childNodes[0].nodeValue;
                 var meileage = cars[i].getElementsByTagName("mileage")[0].childNodes[0].nodeValue;
                 var fuel_type = cars[i].getElementsByTagName("fuel_type")[0].childNodes[0].nodeValue;
+                var seats = cars[i].getElementsByTagName("seats")[0].childNodes[0].nodeValue;
+                var price = cars[i].getElementsByTagName("price_per_day")[0].childNodes[0].nodeValue;
+                var availability = cars[i].getElementsByTagName("availability")[0].childNodes[0].nodeValue;
                 setTitle(i+1,title);
                 //alert(id);
+                // alert(availability);
                 setImage(i+1,model);
                 setMileage(i+1,meileage);
                 setFuel_type(i+1,fuel_type);
+                setSeats(i+1,seats);
+                setPrice(i+1,price);
+                setAvailability(i+1,availability)
                 // dispalyItem(i+1);
             }
         }
@@ -61,6 +68,30 @@
             var id="fuel_type"+index;
             document.getElementById(id).innerHTML = data;
         }
+
+        function setSeats(index,seats){
+            var data = "<b>Seats: </b>"+seats;
+            var id="seats"+index;
+            document.getElementById(id).innerHTML = data;
+        }
+
+        function setPrice(index,price){
+            var data = "<b>Price pre day: </b>"+price;
+            var id="price"+index;
+            document.getElementById(id).innerHTML = data;
+        }
+
+        function setAvailability(index,availability){
+            var result;
+            if(availability=="N"){
+                result="False"
+            }else{
+                result="True";
+            }
+            var data = "<b>Availability: </b>"+result;
+            var id="availability"+index;
+            document.getElementById(id).innerHTML = data;
+        }
         // function dispalyItem(index){
         //     document.getElementById(id).style.display = "inline-block";
         // }
@@ -83,24 +114,36 @@
                 <h4 id=cards1_title></h4>
                 <p id="mileage1"></p>
                 <p id="fuel_type1"></p>
+                <p id="seats1"></p>
+                <p id="price1"></p>
+                <p id="availability1"></p>
             </div>
             <div class="thumbnail2">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards2"/>
                 <h4 id=cards2_title></h4>
                 <p id="mileage2"></p>
                 <p id="fuel_type2"></p>
+                <p id="seats2"></p>
+                <p id="price2"></p>
+                <p id="availability2"></p>
             </div>
             <div class="thumbnail3">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards3"/>
                 <h4 id=cards3_title></h4>
                 <p id="mileage3"></p>
                 <p id="fuel_type3"></p>
+                <p id="seats3"></p>
+                <p id="price3"></p>
+                <p id="availability3"></p>
             </div>
             <div class="thumbnail4">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards4"/>
                 <h4 id=cards4_title></h4>
                 <p id="mileage4"></p>
                 <p id="fuel_type4"></p>
+                <p id="seats4"></p>
+                <p id="price4"></p>
+                <p id="availability4"></p>
             </div>
         </div>
         <div class="gallery">
@@ -109,24 +152,36 @@
                 <h4 id=cards5_title></h4>
                 <p id="mileage5"></p>
                 <p id="fuel_type5"></p>
+                <p id="seats5"></p>
+                <p id="price5"></p>
+                <p id="availability5"></p>
             </div>
             <div class="thumbnail6">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards6"/>
                 <h4 id=cards6_title></h4>
                 <p id="mileage6"></p>
                 <p id="fuel_type6"></p>
+                <p id="seats6"></p>
+                <p id="price6"></p>
+                <p id="availability6"></p>
             </div>
             <div class="thumbnail7">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards7"/>
                 <h4 id=cards7_title></h4>
                 <p id="mileage7"></p>
                 <p id="fuel_type7"></p>
+                <p id="seats7"></p>
+                <p id="price7"></p>
+                <p id="availability7"></p>
             </div>
             <div class="thumbnail8">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards8"/>
                 <h4 id=cards8_title></h4>
                 <p id="mileage8"></p>
                 <p id="fuel_type8"></p>
+                <p id="seats8"></p>
+                <p id="price8"></p>
+                <p id="availability8"></p>
             </div>
         </div>
         <div class="gallery">
@@ -135,12 +190,18 @@
                 <h4 id=cards9_title></h4>
                 <p id="mileage9"></p>
                 <p id="fuel_type9"></p>
+                <p id="seats9"></p>
+                <p id="price9"></p>
+                <p id="availability9"></p>
             </div>
             <div class="thumbnail10">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards10"/>
                 <h4 id=cards10_title></h4>
                 <p id="mileage10"></p>
                 <p id="fuel_type10"></p>
+                <p id="seats10"></p>
+                <p id="price10"></p>
+                <p id="availability10"></p>
             </div>
             <!-- <div class="thumbnail11">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards11"/>
