@@ -27,7 +27,7 @@
                         $price_pre_day = $car['price_pre_day'];
                         $rental_days = $car['rental_days'];
                         echo "<tr>";
-                        echo "<td><img src=$thumbnail width=\"180\"/></td><td>$vehicle</td><td>$$price_pre_day</td><td><input type=\"number\" min =\"1\" max=\"365\" value=$rental_days /></td><td><input id=\"delete_btn\" type=\"button\" value=\"Delete\"/></td>";
+                        echo "<td><img src=$thumbnail width=\"180\"/></td><td>$vehicle</td><td>$$price_pre_day</td><td><input type=\"number\" min =\"1\" max=\"365\" value=$rental_days /></td><td><input id=\"delete_btn\" type=\"button\" name=$vehicle value=\"Delete\"/></td>";
                         echo"</tr>";
                     }
                     echo "<td></td><td></td><td></td><td></td><td><input id=\"delete_btn\" type=\"button\" value=\"Proceeding to CheckOut\"/></td>";
@@ -38,3 +38,5 @@
     </div>
 </body>
 </html>
+<script>
+</script>
