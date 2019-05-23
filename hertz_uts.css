@@ -39,14 +39,14 @@ header {
     width: auto;
     height: auto;
     font-family: "Times New Roman",Times,serif;
-    font-size: 1em;
+    font-size: 2em;
     border-radius: 5px;
 	outline: none;
 	margin-right: 0px;
 }
 
-#add_btn1,#add_btn2,#add_btn3,#add_btn4,#add_btn5,#add_btn6,#add_btn7,#add_btn8,#add_btn9,#add_btn10{
-	background-color: rgb(0, 137, 228);
+#add_btn1,#add_btn2,#add_btn3,#add_btn4,#add_btn5,#add_btn6,#add_btn7,#add_btn8,#add_btn9,#add_btn10,#delete_btn{
+	background-color: rgb(0, 80, 228);
 	text-align: left;
 	margin: 0;
     color: #fff;
@@ -54,10 +54,12 @@ header {
     height: auto;
     font-family: "Times New Roman",Times,serif;
     font-size: 1em;
-    padding-left: 0.4em;
-    padding-right: 0.4em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     border-radius: 5px;
 	outline: none;
+	padding-top: 0.4em;
+	padding-bottom: 0.4em;
 }
 * {
     margin: 0;
@@ -161,3 +163,16 @@ header {
 	padding-right: 20px;
 	color: #A3A3A3;
 } */
+#cart_detail{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5%;
+	margin-top:2%;
+	/* border-collapse: separate; */
+	border-spacing: 30px 0px;
+	padding: 0;
+	text-align: center;
+}
+#cart_detail td{
+	text-align: center;
+}

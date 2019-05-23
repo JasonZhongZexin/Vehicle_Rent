@@ -28,7 +28,7 @@
                     }
                 }
                 echo "Add to the cart successfully.";
-                print_r($_SESSION['cart']);
+                // print_r($_SESSION['cart']);
             }else{
                 echo "Sorry, the car is not available now. Please try other cars.";
             }

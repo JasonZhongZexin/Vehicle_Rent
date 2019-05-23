@@ -16,6 +16,7 @@
             <!-- <input type="button" class="reservation_btn" value="Car Reservation" onclick="location.href='view_carts.php';"/> -->
         </header>
         <h1 align="center" id="reservation_title">Car Reservation</h1>
+        <div id="cart_detial_container">
         <table id="cart_detail">
             <tr><th>Thumbnail</th><th>Vehicle</th><th>Price Per Day</th><th>Rental Days</th><th>Actions</th></tr>
             <?php
@@ -26,12 +27,14 @@
                         $price_pre_day = $car['price_pre_day'];
                         $rental_days = $car['rental_days'];
                         echo "<tr>";
-                        echo "<td><img src=$thumbnail width=\"180\"/></td><td>$vehicle</td><td>$$price_pre_day</td><td><input type=\"number\" min =\"1\" max=\"365\" value=$rental_days /></td><td><input type=\"button\" value=\"Delete\"/></td>";
+                        echo "<td><img src=$thumbnail width=\"180\"/></td><td>$vehicle</td><td>$$price_pre_day</td><td><input type=\"number\" min =\"1\" max=\"365\" value=$rental_days /></td><td><input id=\"delete_btn\" type=\"button\" value=\"Delete\"/></td>";
                         echo"</tr>";
                     }
+                    echo "<td></td><td></td><td></td><td></td><td><input id=\"delete_btn\" type=\"button\" value=\"Proceeding to CheckOut\"/></td>";
                 }
             ?>
         </table>
+        </div>
     </div>
 </body>
 </html>
