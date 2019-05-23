@@ -16,8 +16,9 @@
                     handleXML(this);
                 }
             };
-            xhttp.open("GET", "cars.xml", true);
-            xhttp.send();
+            var url = "./cars.xml";
+            xhttp.open("GET", url, true);
+            xhttp.send(null);
         }
 
         function handleXML(xml){
@@ -44,8 +45,9 @@
                 setFuel_type(i+1,fuel_type);
                 setSeats(i+1,seats);
                 setPrice(i+1,price);
-                setAvailability(i+1,availability)
-                setDescription(i+1,description)
+                setAvailability(i+1,availability);
+                setDescription(i+1,description);
+                setAddCartButton(i+1,model);
                 // dispalyItem(i+1);
             }
         }
@@ -78,7 +80,7 @@
         }
 
         function setPrice(index,price){
-            var data = "<b>Price pre day: </b>"+price;
+            var data = "<b>Price pre day: </b>$"+price;
             var id="price"+index;
             document.getElementById(id).innerHTML = data;
         }
@@ -100,6 +102,18 @@
             var id="description"+index;
             document.getElementById(id).innerHTML = data;
         }
+
+        function setAddCartButton(index,model){
+            var id = "add_btn"+index;
+            document.getElementById(id).name = model;
+            // alert(document.getElementById(id).name);
+        }
+
+        function addItem2Cart(model){
+            // alert(model);
+            checkAvailability(model);
+        }
+
         // function dispalyItem(index){
         //     document.getElementById(id).style.display = "inline-block";
         // }
@@ -107,18 +121,35 @@
         $(document).ready(function(){
             load_cars();
         });
+
+        function checkAvailability(model){
+            var ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function() {
+                //alert(this.readyState);
+                if (this.readyState == 4 && this.status == 200) {
+                    addCarsResult(this);
+                }
+            };
+            var url = "addCar.php?model="+model;
+            ajax.open("GET", url, true);
+            ajax.send(null);
+        }
+
+        function addCarsResult(res){
+            alert(res.responseText);
+        }
     </script>
 </head>
 <body>
 <div class="container">
         <header class="header">
             <h4 class="header_title">Car Rental Center</h4>
-            <!-- <input type="button" class="reservation_btn" value="Car Reservation" /> -->
+            <input type="button" class="reservation_btn" value="Car Reservation" onclick="location.href='view_carts.php';"/>
         </header>
     <div class="gallery_container">
         <div class="gallery">
             <div class="thumbnail1">
-                <img src="./images/320i.jpg" alt="" width="2000" id="cards1"/>
+                <img src="" alt="" width="2000" id="cards1"/>
                 <h4 id=cards1_title></h4>
                 <p id="mileage1"></p>
                 <p id="fuel_type1"></p>
@@ -128,9 +159,10 @@
                 <br/>
                 <br/>
                 <p id="description1"></p>
+                <p><input type="button" id="add_btn1" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
             </div>
             <div class="thumbnail2">
-                <img src="./images/320i.jpg" alt="" width="2000" id="cards2"/>
+                <img src="" alt="" width="2000" id="cards2"/>
                 <h4 id=cards2_title></h4>
                 <p id="mileage2"></p>
                 <p id="fuel_type2"></p>
@@ -140,9 +172,10 @@
                 <br/>
                 <br/>
                 <p id="description2"></p>
+                <p><input type="button" id="add_btn2" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
             </div>
             <div class="thumbnail3">
-                <img src="./images/320i.jpg" alt="" width="2000" id="cards3"/>
+                <img src="" alt="" width="2000" id="cards3"/>
                 <h4 id=cards3_title></h4>
                 <p id="mileage3"></p>
                 <p id="fuel_type3"></p>
@@ -152,9 +185,10 @@
                 <br/>
                 <br/>
                 <p id="description3"></p>
+                <p><input type="button" id="add_btn3" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
             </div>
             <div class="thumbnail4">
-                <img src="./images/320i.jpg" alt="" width="2000" id="cards4"/>
+                <img src="" alt="" width="2000" id="cards4"/>
                 <h4 id=cards4_title></h4>
                 <p id="mileage4"></p>
                 <p id="fuel_type4"></p>
@@ -164,11 +198,12 @@
                 <br/>
                 <br/>
                 <p id="description4"></p>
+                <p><input type="button" id="add_btn4" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
             </div>
         </div>
         <div class="gallery">
             <div class="thumbnail5">
-                <img src="./images/320i.jpg" alt="" width="2000" id="cards5"/>
+                <img src="" alt="" width="2000" id="cards5"/>
                 <h4 id=cards5_title></h4>
                 <p id="mileage5"></p>
                 <p id="fuel_type5"></p>
@@ -178,9 +213,10 @@
                 <br/>
                 <br/>
                 <p id="description5"></p>
+                <p><input type="button" id="add_btn5" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
             </div>
             <div class="thumbnail6">
-                <img src="./images/320i.jpg" alt="" width="2000" id="cards6"/>
+                <img src="" alt="" width="2000" id="cards6"/>
                 <h4 id=cards6_title></h4>
                 <p id="mileage6"></p>
                 <p id="fuel_type6"></p>
@@ -190,9 +226,10 @@
                 <br/>
                 <br/>
                 <p id="description6"></p>
+                <p><input type="button" id="add_btn6" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
             </div>
             <div class="thumbnail7">
-                <img src="./images/320i.jpg" alt="" width="2000" id="cards7"/>
+                <img src="" alt="" width="2000" id="cards7"/>
                 <h4 id=cards7_title></h4>
                 <p id="mileage7"></p>
                 <p id="fuel_type7"></p>
@@ -202,9 +239,10 @@
                 <br/>
                 <br/>
                 <p id="description7"></p>
+                <p><input type="button" id="add_btn7" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
             </div>
             <div class="thumbnail8">
-                <img src="./images/320i.jpg" alt="" width="2000" id="cards8"/>
+                <img src="" alt="" width="2000" id="cards8"/>
                 <h4 id=cards8_title></h4>
                 <p id="mileage8"></p>
                 <p id="fuel_type8"></p>
@@ -214,11 +252,12 @@
                 <br/>
                 <br/>
                 <p id="description8"></p>
+                <p><input type="button" id="add_btn8" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
             </div>
         </div>
         <div class="gallery">
             <div class="thumbnail9">
-                <img src="./images/320i.jpg" alt="" width="2000" id="cards9"/>
+                <img src="" alt="" width="2000" id="cards9"/>
                 <h4 id=cards9_title></h4>
                 <p id="mileage9"></p>
                 <p id="fuel_type9"></p>
@@ -228,9 +267,10 @@
                 <br/>
                 <br/>
                 <p id="description9"></p>
+                <p><input type="button" id="add_btn9" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
             </div>
             <div class="thumbnail10">
-                <img src="./images/320i.jpg" alt="" width="2000" id="cards10"/>
+                <img src="" alt="" width="2000" id="cards10"/>
                 <h4 id=cards10_title></h4>
                 <p id="mileage10"></p>
                 <p id="fuel_type10"></p>
@@ -240,6 +280,7 @@
                 <br/>
                 <br/>
                 <p id="description10"></p>
+                <p><input type="button" id="add_btn10" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
             </div>
             <!-- <div class="thumbnail11">
                 <img src="./images/320i.jpg" alt="" width="2000" id="cards11"/>
