@@ -45,7 +45,7 @@ header {
 	margin-right: 0px;
 }
 
-#add_btn1,#add_btn2,#add_btn3,#add_btn4,#add_btn5,#add_btn6,#add_btn7,#add_btn8,#add_btn9,#add_btn10,#delete_btn{
+#add_btn1,#add_btn2,#add_btn3,#add_btn4,#add_btn5,#add_btn6,#add_btn7,#add_btn8,#add_btn9,#add_btn10,#delete_btn,#booking_btn,#continue_selection{
 	background-color: rgb(0, 80, 228);
 	text-align: left;
 	margin: 0;
