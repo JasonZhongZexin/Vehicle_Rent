@@ -21,6 +21,7 @@
         </header>
         <h1 align="center" id="reservation_title">Car Reservation</h1>
         <div id="cart_detial_container">
+        <form name="checkout_detail" action="checkOut.php" method="POST">
         <table id="cart_detail">
             <tr><th>Thumbnail</th><th>Vehicle</th><th>Price Per Day</th><th>Rental Days</th><th>Actions</th></tr>
             <?php
@@ -31,14 +32,15 @@
                         $price_pre_day = $car['price_pre_day'];
                         $rental_days = $car['rental_days'];
                         echo "<tr>";
-                        echo "<td><img src=$thumbnail width=\"180\"/></td><td>$vehicle</td><td>$$price_pre_day</td><td><input type=\"text\" size=\"5\" class=\"rental_days\" value=$rental_days /></td><td><input id=\"delete_btn\" type=\"button\" onclick=\"deleteItem(this.name)\" name=$vehicle value=\"Delete\"/></td>";
+                        echo "<td><img src=$thumbnail width=\"180\"/></td><td>$vehicle</td><td>$$price_pre_day</td><td><input type=\"text\" size=\"5\" class=\"rental_days\" name=$vehicle value=$rental_days /></td><td><input id=\"delete_btn\" type=\"button\" onclick=\"deleteItem(this.name)\" name=$vehicle value=\"Delete\"/></td>";
                         echo"</tr>";
                     }
-                    $isEmpty = empty($_SESSION['cart']);
-                    echo "<td></td><td></td><td></td><td></td><td><input id=\"delete_btn\" type=\"button\" onclick=\"proceedingCheckOut($isEmpty)\" value=\"Proceeding to CheckOut\"/></td>";
                 }
+                $isEmpty = empty($_SESSION['cart']);
+                echo "<td></td><td></td><td></td><td></td><td><input id=\"delete_btn\" type=\"button\" onclick=\"proceedingCheckOut($isEmpty)\" value=\"Proceeding to Checkout\"/></td>";
             ?>
         </table>
+        </form>
         </div>
     </div>
 </body>
@@ -53,10 +55,11 @@
     function proceedingCheckOut(isEmpty){
         if(isEmpty){
             alert("No car has been reserved");
-            window.location.href = "index.php";
+            document.checkout_detail.action = "index.php";
+            document.checkout_detail.submit();
         }else{
             if(validateDays()){
-                window.location.href = "checkOut.php";
+                document.checkout_detail.submit();
             }
         }
     }
@@ -65,7 +68,7 @@
         var rental_days = document.getElementsByClassName("rental_days");
         var i;
         for(i = 0; i < rental_days.length; i++){
-            if(isNaN(rental_days[i].value)||(rental_days[i].value)<0){
+            if(isNaN(rental_days[i].value)||(rental_days[i].value)<=0){
                 alert("Invalid rental days.");
                 rental_days[i].focus();
                 return false;
