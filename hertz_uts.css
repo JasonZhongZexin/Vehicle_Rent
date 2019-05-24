@@ -33,7 +33,7 @@ header {
 }
 */
 .reservation_btn{
-	background-color: rgb(0, 137, 228);
+	background-color: rgb(0, 80, 228);
 	margin: 0;
     color: #fff;
     width: auto;
@@ -42,6 +42,10 @@ header {
     font-size: 2em;
     border-radius: 5px;
 	outline: none;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
 	margin-right: 0px;
 }
 
@@ -178,4 +182,29 @@ header {
 }
 span{
 	color:red;
+}
+#checkout_detail_form{
+	/* margin-left: auto;
+	margin-right: auto; */
+	margin-top: 5px;
+	margin-bottom: 5%;
+	/* border-spacing: 40px 0px; */
+	/* text-align: center; */
+	margin-left: 60px;
+	padding-bottom: 3%;
+}
+#checkout_detail_table{
+	/* margin-left: auto;
+	margin-right: auto; */
+	/* border-spacing: 60px 10px; */
+	/* padding-right: 60px; */
+	width: 40%;
+	height: 40%;
+	text-align: left;
+}
+/* #checkout_detail_table td:nth-child(2n){
+    background:white;
+} */
+#checkout_detail_form h2, #checkout_detail_form h3{
+	margin-bottom: 10px;
 }

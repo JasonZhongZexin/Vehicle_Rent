@@ -1,10 +1,10 @@
 <?php
     session_start();
     $items =$_REQUEST;
-    if($items!=NULL){
+    $total_price = 0;
+    if(sizeof($items)>1){
         $keys = array_keys($items);
         $vehicles = $_SESSION['cart'];
-        $total_price = 0;
         foreach($keys as $vehicle){
             if(array_key_exists($vehicle,$vehicles)){
                 $request_car = $vehicles[$vehicle];
@@ -54,8 +54,9 @@
             <!-- <input type="button" class="reservation_btn" value="Car Reservation" onclick="location.href='view_carts.php';"/> -->
         </header>
         <h1 align="center" id="reservation_title">Check Out</h1>
-    <form name="checkout_detail" action="process_email.php" onsubmit="return checkEmail();" method="POST">
-        <table  id="delivery_detail">
+        <div id="checkout_detail_container">
+        <form id="checkout_detail_form" name="checkout_detail" action="process_email.php" onsubmit="return checkEmail();" method="POST">
+        <table id="checkout_detail_table">
         <h2>Customer Details and Payment</h2>
         <h3>Please fill in your details. <span>*</span> indicates required field</h3>
         <tr><td>First Name<span>*</span></td><td><input class="detail" type="text" name = "first_name" required/></td></tr>
@@ -84,11 +85,12 @@
                     <option value = "Master Card">Master Card</option>
                 </select>
             </td></tr>
-    </table>
-    <h2>You are required to pay $<?php echo $total_price ?></h2>
-    <input type="button" id="continue_selection" name="continue_shop" onclick="addMore()" value="Continue Selection"/>
-    <input type="submit" id="booking_btn" name="purchase" value="Booking"/>
-    </form>
+        </table>
+            <h2>You are required to pay $<?php echo $total_price ?></h2>
+            <input type="button" id="continue_selection" name="continue_shop" onclick="addMore()" value="Continue Selection"/>
+            <input type="submit" id="booking_btn" name="purchase" value="Booking"/>
+        </form>
+        </div>
     </div>
 </body>
 </html>
