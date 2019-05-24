@@ -76,7 +76,7 @@ header {
     display: inline-block;
 	width: 20%;
 	text-align: center;
-	float: left;
+	/* float: left; */
 	/* margin-top: 35px; */
 	background-color: white;
 	padding-bottom: 20px;
