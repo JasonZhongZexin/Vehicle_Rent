@@ -1,5 +1,9 @@
 <?php
     session_start();
+    $deleteItem = $_GET['deleteItem'];
+    if(isset($deleteItem)&&$deleteItem!=NULL){
+        unset($_SESSION['cart'][$deleteItem]);
+    }
 ?>
 <html lang="en">
 <head>
@@ -27,10 +31,11 @@
                         $price_pre_day = $car['price_pre_day'];
                         $rental_days = $car['rental_days'];
                         echo "<tr>";
-                        echo "<td><img src=$thumbnail width=\"180\"/></td><td>$vehicle</td><td>$$price_pre_day</td><td><input type=\"number\" min =\"1\" max=\"365\" value=$rental_days /></td><td><input id=\"delete_btn\" type=\"button\" name=$vehicle value=\"Delete\"/></td>";
+                        echo "<td><img src=$thumbnail width=\"180\"/></td><td>$vehicle</td><td>$$price_pre_day</td><td><input type=\"text\" size=\"5\" class=\"rental_days\" value=$rental_days /></td><td><input id=\"delete_btn\" type=\"button\" onclick=\"deleteItem(this.name)\" name=$vehicle value=\"Delete\"/></td>";
                         echo"</tr>";
                     }
-                    echo "<td></td><td></td><td></td><td></td><td><input id=\"delete_btn\" type=\"button\" value=\"Proceeding to CheckOut\"/></td>";
+                    $isEmpty = empty($_SESSION['cart']);
+                    echo "<td></td><td></td><td></td><td></td><td><input id=\"delete_btn\" type=\"button\" onclick=\"proceedingCheckOut($isEmpty)\" value=\"Proceeding to CheckOut\"/></td>";
                 }
             ?>
         </table>
@@ -39,4 +44,34 @@
 </body>
 </html>
 <script>
+    function deleteItem(item){
+        if(confirm("Are you sure to remove this car from your reservation list? ")){
+            window.location.href = "view_carts.php?deleteItem="+item;
+        }
+    }
+
+    function proceedingCheckOut(isEmpty){
+        if(isEmpty){
+            alert("No car has been reserved");
+            window.location.href = "index.php";
+        }else{
+            if(validateDays()){
+                window.location.href = "checkOut.php";
+            }
+        }
+    }
+
+    function validateDays(){
+        var rental_days = document.getElementsByClassName("rental_days");
+        var i;
+        for(i = 0; i < rental_days.length; i++){
+            if(isNaN(rental_days[i].value)||(rental_days[i].value)<0){
+                alert("Invalid rental days.");
+                rental_days[i].focus();
+                return false;
+                break;
+            }
+        }
+        return true;
+    }
 </script>
