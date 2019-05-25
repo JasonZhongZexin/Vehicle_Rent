@@ -11,7 +11,7 @@
                 $thumbnail = "./images/" . (string)$car->model . ".jpg";
                 $vehicle = (string)$car->model_year . "-". (string)$car->brand . "-" . (string)$car->model;
                 if(!isset($_SESSION['cart'])||empty($_SESSION['cart'])){
-                    $request_car = array('thumbnail'=>$thumbnail,'vehicle'=>$vehicle,'price_pre_day'=>(string)$car->price_per_day,'rental_days'=>1);
+                    $request_car = array('thumbnail'=>$thumbnail,'vehicle'=>$vehicle,'price_pre_day'=>(string)$car->price_per_day,'rental_days'=>1,'mileage'=>(string)$car->mileage,'fuel_type'=>(string)$car->fuel_type,'seats'=>(string)$car->seats,'description'=>(string)$car->description);
                     $vehicles = array($vehicle=>$request_car);
                     $_SESSION['cart']=$vehicles;
                 }else{
@@ -22,7 +22,7 @@
                         $vehicles[$vehicle] = $request_car; 
                         $_SESSION['cart']=$vehicles;
                     }else{
-                        $request_car = array('thumbnail'=>$thumbnail,'vehicle'=>$vehicle,'price_pre_day'=>(string)$car->price_per_day,'rental_days'=>1);
+                        $request_car = array('thumbnail'=>$thumbnail,'vehicle'=>$vehicle,'price_pre_day'=>(string)$car->price_per_day,'rental_days'=>1,'mileage'=>(string)$car->mileage,'fuel_type'=>(string)$car->fuel_type,'seats'=>(string)$car->seats,'description'=>(string)$car->description);
                         $vehicles[$vehicle] = $request_car;
                         $_SESSION['cart']=$vehicles;
                     }
