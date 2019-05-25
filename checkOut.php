@@ -24,7 +24,7 @@
     <title>Check Out</title>
     <link rel="stylesheet" type="text/css" href="hertz_uts.css">
     <script>
-    function checkEmail(){
+    function validateForm(){
         var email = document.getElementById("email");
         if(trim(email.value)==null || trim(email.value)==""||!validateEmail(email.value)){
             alert("Invalid email address. Please enter a valid email address.");
@@ -55,16 +55,16 @@
         </header>
         <h1 align="center" id="reservation_title">Check Out</h1>
         <div id="checkout_detail_container">
-        <form id="checkout_detail_form" name="checkout_detail" action="process_email.php" onsubmit="return checkEmail();" method="POST">
+        <form id="checkout_detail_form" name="checkout_detail" action="process_email.php" onsubmit="return validateForm();" method="POST">
         <table id="checkout_detail_table">
         <h2>Customer Details and Payment</h2>
         <h3>Please fill in your details. <span>*</span> indicates required field</h3>
         <tr><td>First Name<span>*</span></td><td><input class="detail" type="text" name = "first_name" required/></td></tr>
         <tr><td>Last Name<span>*</span></td><td><input class="detail" type="text" name = "last_name" required/></td></tr>
         <tr><td>Email Address<span>*</span></td><td><input class="detail"  id="email" type="text" name = "email" /></td></tr>
-        <tr><td>Address Line1<span>*</span></td><td><input type="text" name = "address_line1" require/></td></tr>
+        <tr><td>Address Line1<span>*</span></td><td><input type="text" name = "address_line1" required/></td></tr>
         <tr><td>Address Line2</td><td><input type="text" name = "address_line2"/></td></tr>
-        <tr><td>City<span>*</span></td><td><input type="text" name = "city" require/></td></tr>
+        <tr><td>City<span>*</span></td><td><input type="text" name = "city" required/></td></tr>
             <tr><td>State<span>*</span></td>
             <td>
                 <select name = "state">
@@ -77,7 +77,7 @@
                     <option value = "WA">WA</option>
                 </select>
             </td></tr>
-            <tr><td>Post Code<span>*</span></td><td><input type="text" name = "post_code" require/></td></tr>
+            <tr><td>Post Code<span>*</span></td><td><input type="text" name = "post_code" required/></td></tr>
             <tr><td>Payment Type<span>*</span></td><td>
                 <select name = "payment">
                     <option value = "PayPal">PayPal</option>
@@ -86,6 +86,7 @@
                 </select>
             </td></tr>
         </table>
+            <input type="hidden" name="cost" value = <?php echo $total_price ?> />
             <h2>You are required to pay $<?php echo $total_price ?></h2>
             <input type="button" id="continue_selection" name="continue_shop" onclick="addMore()" value="Continue Selection"/>
             <input type="submit" id="booking_btn" name="purchase" value="Booking"/>
