@@ -2,7 +2,7 @@
     session_start();
     $deleteItem = $_GET['deleteItem'];
     if(isset($deleteItem)&&$deleteItem!=NULL){
-        unset($_SESSION['cart'][$deleteItem]);
+        unset($_SESSION['reservation_cart'][$deleteItem]);
     }
 ?>
 <html lang="en">
@@ -25,8 +25,8 @@
         <table id="cart_detail">
             <tr><th>Thumbnail</th><th>Vehicle</th><th>Price Per Day</th><th>Rental Days</th><th>Actions</th></tr>
             <?php
-                if(isset($_SESSION['cart'])||!empty($_SESSION['cart'])){
-                    foreach($_SESSION['cart'] as $car){
+                if(isset($_SESSION['reservation_cart'])||!empty($_SESSION['reservation_cart'])){
+                    foreach($_SESSION['reservation_cart'] as $car){
                         $thumbnail = $car['thumbnail'];
                         $vehicle = $car['vehicle'];
                         $price_pre_day = $car['price_pre_day'];
@@ -36,7 +36,7 @@
                         echo"</tr>";
                     }
                 }
-                $isEmpty = empty($_SESSION['cart']);
+                $isEmpty = empty($_SESSION['reservation_cart']);
                 echo "<td></td><td></td><td></td><td></td><td><input id=\"delete_btn\" type=\"button\" onclick=\"proceedingCheckOut($isEmpty)\" value=\"Proceeding to Checkout\"/></td>";
             ?>
         </table>

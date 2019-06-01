@@ -86,13 +86,7 @@
         }
 
         function setAvailability(index,availability){
-            var result;
-            if(availability=="N"){
-                result="False"
-            }else{
-                result="True";
-            }
-            var data = "<b>Availability: </b>"+result;
+            var data = "<b>Availability: </b>"+availability;
             var id="availability"+index;
             document.getElementById(id).innerHTML = data;
         }

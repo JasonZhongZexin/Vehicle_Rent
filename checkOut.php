@@ -4,13 +4,13 @@
     $total_price = 0;
     if(sizeof($items)>1){
         $keys = array_keys($items);
-        $vehicles = $_SESSION['cart'];
+        $vehicles = $_SESSION['reservation_cart'];
         foreach($keys as $vehicle){
             if(array_key_exists($vehicle,$vehicles)){
                 $request_car = $vehicles[$vehicle];
                 $request_car['rental_days'] = $items[$vehicle];
                 $vehicles[$vehicle] = $request_car; 
-                $_SESSION['cart']=$vehicles;
+                $_SESSION['reservation_cart']=$vehicles;
                 $total_price += ($request_car['rental_days'])*($request_car['price_pre_day']);
             }
         }
