@@ -88,8 +88,8 @@
         </table>
             <input type="hidden" name="cost" value = <?php echo $total_price ?> />
             <h2>You are required to pay $<?php echo $total_price ?></h2>
-            <input type="button" id="continue_selection" name="continue_shop" onclick="addMore()" value="Continue Selection"/>
-            <input type="submit" id="booking_btn" name="purchase" value="Booking"/>
+            <input type="button" id="continue_selection" name="continue_shop" onclick="addMore()" value="Continue Selection" style="cursor: pointer"/>
+            <input type="submit" id="booking_btn" name="purchase" value="Booking"  style="cursor: pointer"/>
         </form>
         </div>
     </div>

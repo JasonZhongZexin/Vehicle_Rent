@@ -138,7 +138,7 @@
 <div class="container">
         <header class="header">
             <h4 class="header_title">Car Rental Center</h4>
-            <input type="button" class="reservation_btn" value="Car Reservation" onclick="location.href='view_carts.php';"/>
+            <input type="button" class="reservation_btn" value="Car Reservation" onclick="location.href='view_carts.php';" style="cursor: pointer"/>
         </header>
     <div class="gallery_container">
         <div class="gallery">
@@ -153,7 +153,7 @@
                 <br/>
                 <br/>
                 <p id="description1"></p>
-                <p><input type="button" id="add_btn1" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
+                <p><input type="button" id="add_btn1" name="" value="Add to cart" onclick="addItem2Cart(this.name);" style="cursor: pointer"/></p>
             </div>
             <div class="thumbnail2">
                 <img src="" alt="" width="2000" id="cards2"/>
@@ -166,7 +166,7 @@
                 <br/>
                 <br/>
                 <p id="description2"></p>
-                <p><input type="button" id="add_btn2" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
+                <p><input type="button" id="add_btn2" name="" value="Add to cart" onclick="addItem2Cart(this.name);" style="cursor: pointer"/></p>
             </div>
             <div class="thumbnail3">
                 <img src="" alt="" width="2000" id="cards3"/>
@@ -179,7 +179,7 @@
                 <br/>
                 <br/>
                 <p id="description3"></p>
-                <p><input type="button" id="add_btn3" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
+                <p><input type="button" id="add_btn3" name="" value="Add to cart" onclick="addItem2Cart(this.name);" style="cursor: pointer"/></p>
             </div>
             <div class="thumbnail4">
                 <img src="" alt="" width="2000" id="cards4"/>
@@ -192,7 +192,7 @@
                 <br/>
                 <br/>
                 <p id="description4"></p>
-                <p><input type="button" id="add_btn4" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
+                <p><input type="button" id="add_btn4" name="" value="Add to cart" onclick="addItem2Cart(this.name);" style="cursor: pointer"/></p>
             </div>
         </div>
         <div class="gallery">
@@ -207,7 +207,7 @@
                 <br/>
                 <br/>
                 <p id="description5"></p>
-                <p><input type="button" id="add_btn5" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
+                <p><input type="button" id="add_btn5" name="" value="Add to cart" onclick="addItem2Cart(this.name);" style="cursor: pointer"/></p>
             </div>
             <div class="thumbnail6">
                 <img src="" alt="" width="2000" id="cards6"/>
@@ -220,7 +220,7 @@
                 <br/>
                 <br/>
                 <p id="description6"></p>
-                <p><input type="button" id="add_btn6" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
+                <p><input type="button" id="add_btn6" name="" value="Add to cart" onclick="addItem2Cart(this.name);" style="cursor: pointer"/></p>
             </div>
             <div class="thumbnail7">
                 <img src="" alt="" width="2000" id="cards7"/>
@@ -233,7 +233,7 @@
                 <br/>
                 <br/>
                 <p id="description7"></p>
-                <p><input type="button" id="add_btn7" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
+                <p><input type="button" id="add_btn7" name="" value="Add to cart" onclick="addItem2Cart(this.name);" style="cursor: pointer"/></p>
             </div>
             <div class="thumbnail8">
                 <img src="" alt="" width="2000" id="cards8"/>
@@ -246,7 +246,7 @@
                 <br/>
                 <br/>
                 <p id="description8"></p>
-                <p><input type="button" id="add_btn8" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
+                <p><input type="button" id="add_btn8" name="" value="Add to cart" onclick="addItem2Cart(this.name);" style="cursor: pointer"/></p>
             </div>
         </div>
         <div class="gallery">
@@ -261,7 +261,7 @@
                 <br/>
                 <br/>
                 <p id="description9"></p>
-                <p><input type="button" id="add_btn9" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
+                <p><input type="button" id="add_btn9" name="" value="Add to cart" onclick="addItem2Cart(this.name);" style="cursor: pointer"/></p>
             </div>
             <div class="thumbnail10">
                 <img src="" alt="" width="2000" id="cards10"/>
@@ -274,20 +274,8 @@
                 <br/>
                 <br/>
                 <p id="description10"></p>
-                <p><input type="button" id="add_btn10" name="" value="Add to cart" onclick="addItem2Cart(this.name);"/></p>
+                <p><input type="button" id="add_btn10" name="" value="Add to cart" onclick="addItem2Cart(this.name);" style="cursor: pointer"/></p>
             </div>
-            <!-- <div class="thumbnail11">
-                <img src="./images/320i.jpg" alt="" width="2000" id="cards11"/>
-                <h4 id=cards11_title></h4>
-                <p class="tag11">HTML, CSS, JS, WordPress</p>
-                <p class="text_column11">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <div class="thumbnail12">
-                <img src="./images/320i.jpg" alt="" width="2000" id="cards12"/>
-                <h4 id=cards12_title></h4>
-                <p class="tag12">HTML, CSS, JS, WordPress</p>
-                <p class="text_column12">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div> -->
         </div>
     </div>
 </div>

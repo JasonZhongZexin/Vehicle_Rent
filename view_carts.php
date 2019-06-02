@@ -32,12 +32,12 @@
                         $price_pre_day = $car['price_pre_day'];
                         $rental_days = $car['rental_days'];
                         echo "<tr>";
-                        echo "<td><img src=$thumbnail width=\"180\"/></td><td>$vehicle</td><td>$$price_pre_day</td><td><input type=\"text\" size=\"5\" class=\"rental_days\" name=$vehicle value=$rental_days /></td><td><input id=\"delete_btn\" type=\"button\" onclick=\"deleteItem(this.name)\" name=$vehicle value=\"Delete\"/></td>";
+                        echo "<td><img src=$thumbnail width=\"180\"/></td><td>$vehicle</td><td>$$price_pre_day</td><td><input type=\"text\" size=\"5\" class=\"rental_days\" name=$vehicle value=$rental_days /></td><td><input id=\"delete_btn\" type=\"button\" onclick=\"deleteItem(this.name)\" name=$vehicle value=\"Delete\"  style=\"cursor: pointer\"/></td>";
                         echo"</tr>";
                     }
                 }
                 $isEmpty = empty($_SESSION['reservation_cart']);
-                echo "<td></td><td></td><td></td><td></td><td><input id=\"delete_btn\" type=\"button\" onclick=\"proceedingCheckOut($isEmpty)\" value=\"Proceeding to Checkout\"/></td>";
+                echo "<td></td><td></td><td></td><td></td><td><input id=\"delete_btn\" type=\"button\" onclick=\"proceedingCheckOut($isEmpty)\" value=\"Proceeding to Checkout\"  style=\"cursor: pointer\"/></td>";
             ?>
         </table>
         </form>
